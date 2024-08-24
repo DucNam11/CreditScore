@@ -1,0 +1,19 @@
+
+services:
+  dashboard:
+    build: ./credit_score_frontend
+    ports:
+      - "8501:8501"
+    container_name: dashboard
+    depends_on:
+      - flask_api
+  
+  flask_api:
+    build: ./credit_score_backend
+    ports:
+      - "5000:5000"
+    container_name: api
+    environment:
+      - DATA_DIR=/app/data  
+    volumes:
+      - ./credit_score_data_modeling/Notebooks/Resources/datasets/browse:/app/data  

@@ -1,0 +1,9 @@
+Flask
+pandas
+joblib
+SQLAlchemy
+lightgbm
+requests
+PyMySQL
+Werkzeug
+cryptography
